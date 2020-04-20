@@ -125,3 +125,98 @@ let prettySure: Object = 4;
 // 当你只知道一部分数据的类型时，any 类型时有用的。比如，你有一个包含了不同类型的数组：
 let list1: any[] = [1, true, 'string'];
 list1[1] = 100;
+
+/**
+ * Void
+ * 某种程度上来说，Void 和 any 正相反，它表示没有任何类型。当一个函数没有返回值时，它的返回值类型是 void：
+ */
+function warnUser(): void {
+  console.log('this is my warning message');
+}
+
+// 声明一个 void 类型变量没有大用，因为只能为它赋值 undefined 和 null：
+let unusable: void = undefined
+
+/**
+ * Null 和 Undefined
+ * null 和 undefined 分别有自己的类型 null 和 undefined。和 void 相似，他们本身的类型用处不大：
+ */
+
+let u: undefined = undefined;
+let n: null = null;
+
+// 默认情况下，null 和 undefined 是所有类型的子类型。可以将 null 和 undefined 赋值给 number 类型的变量
+let num: number = null
+
+// 然而，当指定了 --strictNullChecks 标记，null 和 undefined 只能赋值给 void 和它们各自。这能避免很多常见问题。
+// 如果你想传入 string 或 null 或 undefined，你可以使用联合类型 string | null | undefined。
+
+// 鼓励使用 --strictNullChecks，但是手册中我们假设这个标记是关闭的。
+
+/**
+ * Never
+ * never 类型表示那些永远不存在的值的类型。例如，never 类型是那些总是会抛出异常或者根本就不会有返回值的函数表达式
+ * 或箭头函数表达式的返回值类型；变量也可能是 never 类型，当他们被永不为真的类型保护所约束时。
+ * 
+ * never 类型是任何类型的子类型，也可以赋值给任何类型；然而没有类型是 never 类型的子类型，或可以赋值给 never 类型（除了 never 本身之外）。
+ * 即使 any 也不可以赋值给 never。
+ */
+
+//  下面是一些返回 never 类型的函数
+
+// 返回 never 的函数必须存在无法到达的终点
+function error(message: string): never {
+  throw new Error(message)
+}
+
+// 推断的返回值类型为 never
+function fail() {
+  return error('Something failed')
+}
+// 返回 never 的函数必须存在无法达到的终点
+function infiniteLoop(): never {
+  while(true){
+  }
+}
+
+/**
+ * Object object
+ * object 表示非原始类型，也就是除 number，string，boolean，symbol，null 和 undefined 之外的类型
+ */
+
+// 使用 object 类型，就可以更好的表示像 Object.create 这样的 API。例如：
+
+declare function create(o: object | null): void;
+
+create({ prop: 0 });
+create(null);
+
+// create(42); // Error
+// create('string'); // Error
+// create(false); // Error
+
+// 这个是通过的，但是文档标记为错误
+create(undefined);
+
+/**
+ * 类型断言
+ * 你会比 TypeScript 更了解某个值的详细信息，通常发生在你清楚的知道一个实体具有比它现有类型更确切的类型。
+ * 
+ * 类型断言好比其他语言中的类型转换，但是不进行特殊的数据检查和解构。没有运行时影响，只是在编译阶段起作用。
+ * Typescript 会假设你，程序员，已经做了检查。
+ */
+
+//  类型断言有两种形式，一种是 "尖括号" 语法：
+let someValue: any = 'this is a string';
+let strLength: number = (<string>someValue).length
+
+// 另一种是 as 语法：
+let someValue1: any = 'this is a string';
+let strLength1: number = (someValue1 as string).length
+
+// 两种语法等价，看喜好。但是 jsx 中只有 as 语法是被允许的。
+
+/**
+ * 关于let
+ * 很多常见问题可以通过使用 let 解决，所以尽可能的使用 let 代替 var 吧。
+ */

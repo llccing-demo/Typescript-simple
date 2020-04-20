@@ -33,3 +33,6 @@ npm run build
 ## 参考
 
 - [Typescirpt 入门实践](https://juejin.im/post/5e7c08bde51d455c4c66ddad#heading-26)
+
+- [官方 英文文档](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [官方 中文文档](https://www.tslang.cn/docs/handbook/variable-declarations.html)
