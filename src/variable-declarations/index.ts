@@ -104,3 +104,5 @@ let clone = { ...cls }
 clone.p;
 // 这里会报错，因为 m 方法是原型上的方法，不是对象自身的方法
 // clone.m()
+
+// ES6的类方法与ES5的类方法唯一的不同就是ES6的方法是non-enumerable(不可枚举)的，而ES5由于是直接使用class.prototype.xxx = function(){}
