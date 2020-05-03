@@ -142,7 +142,7 @@ getProperty(x1, 'a')
 
 // 在泛型里使用类类型
 // 在 TypeScript 使用泛型创建工厂函数时，需要引用构造函数的类类型。比如，
-function create<T>(c: { new(): T; }): T {
+function create1<T>(c: { new(): T; }): T {
   return new c()
 }
 
