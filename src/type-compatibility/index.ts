@@ -9,16 +9,16 @@
  * 它正好与名义（nominal）类型形成对比。
  */
 interface Named {
-  name: string;
+  name11: string;
 }
 
-class Person {
-  name: string;
+class Person11 {
+  name11: string;
 }
 
 let p: Named;
 // 这是可以的，因为结构类型
-p = new Person()
+p = new Person11()
 // 使用基于名义类型的语言，如C#或Java中，这段代码会报错，因为Person类没有明确说明其实现了 Named 接口。
 
 /**
