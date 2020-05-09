@@ -621,14 +621,14 @@ let personProps: keyof Person8
 // 索引类型和字符串索引签名
 // keyof 和 T[K] 与 字符串索引签名进行交互。如果你有一个带有字符串索引签名的类型，那么 keyof T 会是string。
 // 并且 T[string] 为索引签名的类型
-interface Map<T> {
+interface Map2<T> {
   [key: string]: T;
 }
 
 // keys 类型为 string
-let keys: keyof Map<number>
+let keys: keyof Map2<number>
 // value 类型为 number
-let value: Map<number>['foo']
+let value: Map2<number>['foo']
 
 /**
  * 映射类型
