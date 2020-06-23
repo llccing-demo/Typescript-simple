@@ -33,7 +33,7 @@ npm run build
 ## 参考
 
 - [TypeScript 一种思维方式](https://zhuanlan.zhihu.com/p/63346965)
-- [Typescirpt 入门实践](https://juejin.im/post/5e7c08bde51d455c4c66ddad#heading-26)
+- [Typescirpt 入门实践](https://juejin.im/post/5e7c08bde51d455c4c66ddad#heading-26)
 
 - [官方 英文文档](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 - [官方 中文文档](https://www.tslang.cn/docs/handbook/variable-declarations.html)
