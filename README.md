@@ -38,3 +38,5 @@ npm run build
 - [官方 英文文档](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 - [官方 中文文档](https://www.tslang.cn/docs/handbook/variable-declarations.html)
 
+- [深入理解TypeScript 书籍](https://jkchao.github.io/typescript-book-chinese/typings/typeInference.html)
+- [TypeScript 理解程度测试](https://github.com/mdevils/typescript-exercises)
